@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guesser Game Application </title>
+    <link rel="icon" href="guess.jpg">
+    <style>
+        .colhead{
+            color: rgb(233, 233, 246);
+            font-size: 30px;
+        }
+        .butn{
+            font-size: 20px;
+            color: rgb(243, 66, 12);
+        }
+        .empty{
+            width: 300px;
+            height: 20px;
+
+        }
+    </style>
+
+</head>
+<body style="background-image: url('img3.jpg') ;background-size: cover;">
+   <center> <h1 style="color:rgb(232, 232, 7)">GUESSER GAME APPLICATION</h1></center><br><hr>
+
+    <center><b><h1 style="color:rgb(232, 30, 30);">Umpire is watching the  Game</h1></b></center> <br><br>
+    <div class="container">
+
+    <form id="GFG" action="winner.html">
+
+        <fieldset style="margin-left: 150px; margin-right: 150px; border: 50px groove (internal value) " >&nbsp; &nbsp;
+        <legend style="text-align: center ; color:rgb(245, 66, 11);"><b>ALL ARE GOING TO GUESS THE NUMBERS HERE ONE BY ONE</b></legend>
+
+        <center>
+        <label for="guesser"class="colhead">  Guesser Enter your Number :
+            <input type="password" placeholder="guesser" name="guesser" id="guesser" class="empty">
+        </label>
+    <br> <br><br>
+
+    <label for="player1" class="colhead"> Player1 Guess the Number   :
+        <input type="password" placeholder="player1" name="player1" id="player1" class="empty">
+    </label> <br><br><br>
+
+    <label for="player2" class="colhead"> Player2 Guess the Number :
+        <input type="password" placeholder="player2" name="player2" id="player2" class="empty"> <br>
+    </label> <br><br>
+
+    <label for="player3" class="colhead"> Player3 Guess the Number :
+        <input type="password" placeholder="player3" name="player3" id="player3" class="empty"> <br>
+    </label><br><br>
+
+       <button id="btn" class="butn">  submit</button> 
+    </form>
+</center>
+</fieldset>
+
+    <div id="output">
+
+    </div>
+</div>
+
+
+</body>
+</html>
