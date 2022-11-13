@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+    .centered {
+        font-size:60px;
+        text-align: center;
+        padding: 2px;
+
+
+    }
+    .ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+  color:rgb(240, 208, 29)
+}
+
+    </style>
+
+
+    <!-- <link rel="stylesheet" href="gamer.css"> -->
+    <title>Winner Page</title>
+    <link rel="stylesheet" href="win.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+</head>
+<body>
+
+
+
+    <div id="videowrapper">
+        <div id="fullScreenDiv">
+           <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted="" autoplay="" class="blur">
+                <source src="vid5.mp4" type="video/webm">
+                <source src="vid5.mp4" type="video/mp4">
+            </video> 
+            <div id="videoMessage" class="styling ml6"> 
+                <div class="centered letters" id="output"> <b>Result:  </b></div>
+
+            </div>   
+        </div>
+    </div>
+
+    <script>
+let params = new URLSearchParams(window.location.search)
+
+
+         let btn = document.getElementById('btn');
+   let output = document.getElementById('output');
+
+        let umpire = params.get("guesser"); 
+let player1 = params.get("player1"); 
+let player2 = params.get("player2"); 
+let player3 = params.get("player3"); 
+           if(player1 == umpire && player2 == umpire && player3 == umpire)
+           {
+            output.innerHTML=`All The Players Won The Game!`
+           }
+           else if(umpire==player1)
+           {
+                output.innerHTML=`Player 1 Has Won The Game!`
+           }
+           else if(umpire==player2)
+           {
+            output.innerHTML=`Player 2 Has Won The Game!`
+           }
+           else if(umpire==player3)
+           {
+            output.innerHTML=`Player 3 Has Won The Game!`
+           }
+           else
+           {
+            output.innerHTML=`All Three Has Lost The Game!!`
+           }
+           console.log(umpire,player1,player2,player3 )
+
+
+           var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+    </script>
+</body>
+</html>
